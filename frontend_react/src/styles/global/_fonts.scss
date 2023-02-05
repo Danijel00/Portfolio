@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Convergence&family=La+Belle+Aurore&family=Poppins:wght@400;500;600;700&display=swap');
+@import './mixins';
+
+p,
+input,
+label,
+textarea,
+a {
+  font-weight: var(--fw-light);
+  font-size: 1.3rem;
+
+  @include respond(tab-port) {
+    font-size: 1.5rem;
+  }
+
+  @include respond(slim) {
+    font-size: 1.2rem;
+  }
+}
+
+body {
+  font-family: var(--ff-poppins);
+}
+
+h1 {
+  font-weight: var(--fw-semibold);
+
+  &::before,
+  &::after {
+    font-family: 'La Belle Aurore', cursive;
+  }
+}

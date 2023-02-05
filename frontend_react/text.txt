@@ -1,0 +1,24 @@
+ {/* <li className="about__item">
+                    CSS3 <img src={icon.css} alt="icon" />
+                  </li>
+                  <li className="about__item">
+                    Sass <img src={icon.sass} alt="icon" />
+                  </li>
+                  <li className="about__item">
+                    JavaScript(ES6+) <img src={icon.js} alt="icon" />
+                  </li>
+                  <li className="about__item">
+                    ReactJs <img src={icon.react} alt="icon" />
+                  </li>
+                  <li className="about__item">
+                    React Redux <img src={icon.redux} alt="icon" />
+                  </li>
+                  <li className="about__item">
+                    NextJs <img src={icon.nextJs} alt="icon" />
+                  </li>
+                  <li className="about__item">
+                    TypeScript <img src={icon.type} alt="icon" />
+                  </li>
+                  <li className="about__item">
+                    Firebase <img src={icon.firebase} alt="icon" />
+                  </li> */}

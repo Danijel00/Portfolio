@@ -1,0 +1,153 @@
+@import 'mixins';
+@import 'fonts';
+@import 'variables';
+@import 'animate.css';
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: 'Open Sans', sans-serif;
+
+  @include respond(tab-land) {
+    font-size: 56.25%; // 1rem = 9px
+  }
+
+  @include respond(tab-port) {
+    font-size: 50%; // 1rem = 8px
+  }
+
+  @include respond(big-desktop) {
+    font-size: 75%; // 1rem = 12px
+  }
+}
+
+main {
+  -webkit-font-smoothing: antialiased;
+  font-weight: var(--fw-normal);
+  font-size: 1.4rem;
+  line-height: 1.7;
+}
+
+body {
+  min-height: 100vh;
+  position: relative;
+  background-image: linear-gradient(
+    to right top,
+    #0a1921,
+    #0b1c26,
+    #0c202a,
+    #0d232f,
+    #0e2734,
+    #0f2a39,
+    #102e3d
+  );
+  color: var(--white);
+
+  &::after {
+    content: '';
+    background-color: rgba($color: #000, $alpha: 0.3);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: var(--secondary);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #233554;
+  border-radius: 100px;
+}
+
+.heading {
+  display: inline-block;
+  font-size: 5rem;
+  color: var(--yellow-alt);
+  position: relative;
+  margin-bottom: 40px;
+  left: 10px;
+
+  @include respond(tab-land) {
+    font-size: 4rem;
+  }
+
+  @include respond(slim) {
+    font-size: 3rem;
+  }
+
+  &::before,
+  &::after {
+    font-size: 18px;
+    position: absolute;
+    opacity: 0.6;
+    line-height: 18px;
+    font-weight: var(--fw-light);
+  }
+
+  &::before {
+    content: '<h1>';
+    left: -10px;
+    margin-top: -10px;
+  }
+
+  &::after {
+    content: '</h1>';
+    left: -30px;
+    bottom: -20px;
+    margin-left: 20px;
+  }
+}
+
+.button {
+  color: var(--white);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1.2rem 1.5rem;
+  border: 2px solid var(--blue);
+  margin-top: 25px;
+  animation: fadeIn 1s 1.8s backwards;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: var(--blue);
+    box-shadow: 0 0 15px var(--blue);
+    transform: scale(1.05);
+  }
+}
+
+.suspense {
+  position: absolute;
+  top: 10rem;
+  left: 10rem;
+}

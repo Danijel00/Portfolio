@@ -1,0 +1,121 @@
+@import '../../styles/global/mixins';
+
+.portfolio {
+  margin-top: 5rem;
+  &__container {
+    display: grid;
+    gap: 3rem;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    justify-content: center;
+
+    @include respond(tab-land) {
+      grid-template-columns: repeat(auto-fit, minmax(33rem, 1fr));
+      gap: 1.5rem;
+    }
+
+    @include respond(tab-port) {
+      gap: 0.8rem;
+    }
+  }
+
+  &__heading {
+    letter-spacing: 5rem;
+
+    @include respond(phone) {
+      letter-spacing: 2rem;
+    }
+
+    &::after,
+    &::before {
+      letter-spacing: 1px;
+    }
+  }
+
+  &__images {
+    display: flex;
+    gap: 1rem;
+    box-shadow: 0 10px 30px -15px rgb(2 12 27 / 70%);
+    background-color: var(--dark);
+    padding: 1rem 1rem;
+    border-radius: 4px;
+    opacity: 0;
+    animation: fadeInUp 2s 1s;
+    animation-fill-mode: forwards;
+
+    &-content {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      width: 100%;
+
+      .portfolio-img {
+        border-radius: 4px;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        border: 3px solid var(--white);
+      }
+
+      p {
+        &:nth-of-type(1) {
+          margin-bottom: 0.5rem;
+        }
+        &:nth-of-type(2) {
+          margin-bottom: 2rem;
+        }
+      }
+
+      .links {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border: 1px solid rgba($color: #ccc, $alpha: 0.1);
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        border-radius: 1rem;
+        padding: 1rem;
+
+        div {
+          display: flex;
+          align-self: center;
+          gap: 1rem;
+
+          a {
+            display: inline-flex;
+            box-shadow: rgba(1, 1, 1, 0.05) 0px 0px 80px 0px inset,
+              rgba(1, 1, 1, 0.05) 0px 0px 80px 0px inset;
+            background-color: rgba(1, 1, 1, 0.05);
+            // border: 2px solid #111;
+            border: 1px solid rgba($color: #ccc, $alpha: 0.2);
+
+            border-radius: 50%;
+            padding: 0.85rem;
+            transition: all 0.3s ease-in-out;
+
+            &:hover {
+              background: var(--yellow);
+
+              svg {
+                transition: all 0.3s ease-in-out;
+                color: #111;
+              }
+            }
+          }
+          svg {
+            color: #fff;
+            transition: all 0.3s ease-in-out;
+          }
+        }
+      }
+    }
+
+    &-box {
+      background-color: var(--dark);
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      border-radius: 4px;
+      padding: 1rem 1rem;
+      width: 100%;
+      border: 1px solid rgba($color: #ccc, $alpha: 0.2);
+    }
+  }
+}

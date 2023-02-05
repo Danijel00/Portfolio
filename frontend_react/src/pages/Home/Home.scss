@@ -1,0 +1,145 @@
+@import '../../styles/global/mixins';
+
+.header {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  overflow: hidden;
+
+  &__welcome {
+    position: absolute;
+    color: #fff;
+    bottom: 0;
+    right: 0;
+    font-size: 12rem;
+    opacity: 0.5;
+    letter-spacing: 1px;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 3px;
+    line-height: 0.8;
+    z-index: 2;
+    overflow: hidden;
+    padding: 1rem;
+
+    @include respond(tab-land) {
+      font-size: 11rem;
+    }
+
+    @include respond(medium) {
+      font-size: 8.5rem;
+      -webkit-text-stroke-width: 2px;
+    }
+  }
+
+  &__banner {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    overflow: hidden;
+
+    div {
+      height: inherit;
+      width: inherit;
+      background-image: url('../../image/human.png');
+      background-repeat: no-repeat;
+      filter: grayscale(100%) brightness(90%) sepia(100%) hue-rotate(-210deg)
+        saturate(600%) contrast(1);
+      animation: fadeInUp 1s 2s;
+      animation-fill-mode: forwards;
+      background-position: bottom;
+      background-size: contain;
+      opacity: 0;
+
+      @include respond(phone) {
+        background-size: cover;
+      }
+    }
+  }
+
+  &__text {
+    display: inline-block;
+    will-change: contents;
+    opacity: 0;
+    z-index: 1;
+    transform-style: preserve-3d;
+    animation: fadeIn 2s forwards;
+    animation-delay: 1s;
+
+    &-heading {
+      font-size: 6rem;
+      letter-spacing: 3px;
+
+      @include respond(tab-land) {
+        font-size: 60px;
+        letter-spacing: 2px;
+      }
+
+      @include respond(tab-port) {
+        letter-spacing: 1px;
+      }
+
+      @include respond(phone) {
+        font-size: 5.5rem;
+        letter-spacing: 2px;
+      }
+    }
+
+    &-img {
+      width: 80px;
+      margin-left: 16px;
+
+      @include respond(tab-port) {
+        width: 60px;
+        margin-left: 10px;
+      }
+    }
+
+    &-subheading {
+      margin-top: 1.5rem;
+      font-weight: var(--fw-light);
+      font-size: 1.4rem;
+      letter-spacing: 3px;
+      animation: fadeIn 0.8s 1.2s backwards;
+      width: fit-content;
+      background-color: rgba($color: #fff, $alpha: 0.03);
+      padding: 1rem;
+      border-radius: 3px;
+      position: relative;
+
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        background-color: rgba($color: #fff, $alpha: 0.3);
+        height: 1px;
+      }
+
+      &::before {
+        left: -2rem;
+        width: 25%;
+        transform: rotateZ(-45deg);
+      }
+      &::after {
+        right: -2rem;
+        width: 25%;
+        bottom: 1rem;
+        transform: rotateZ(-45deg);
+      }
+
+      @include respond(tab-port) {
+        margin-top: 10px;
+        font-weight: 400;
+        font-size: 14px;
+        letter-spacing: 1px;
+      }
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 1rem;
+  }
+}
