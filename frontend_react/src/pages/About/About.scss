@@ -6,6 +6,10 @@
   overflow: hidden;
   position: relative;
 
+  @include respond(phone) {
+    overflow: scroll;
+  }
+
   &__content {
     width: 100%;
   }
