@@ -135,6 +135,10 @@
     position: relative;
     z-index: 1;
 
+    @include respond(phone) {
+      font-size: 1rem;
+    }
+
     &:hover {
       color: #333;
 
